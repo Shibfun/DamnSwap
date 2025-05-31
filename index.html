@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedswap</title>
+    <title>DAMNswap</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -193,19 +193,19 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">FeedSwap</div>
+        <div class="header">DAMNSwap</div>
         <div class="connect-section">
             <button id="connectWalletButton">Connect Wallet</button>
             <div id="networkStatus" class="status">Click to connect...</div>
         </div>
         <div class="input-box">
             <label>Balances</label>
-            <div class="balance-row"><span>FEED</span><span id="FEEDBalance">Balance: 0</span></div>
-            <div class="balance-row"><span>WFEED</span><span id="WFEEDBalance">Balance: 0</span></div>
+            <div class="balance-row"><span>DAMN</span><span id="DAMNBalance">Balance: 0</span></div>
+            <div class="balance-row"><span>WDAMN</span><span id="WDAMNBalance">Balance: 0</span></div>
         </div>
         <div class="input-box">
-            <label>Deposit FEED for WFEED</label>
-            <input type="number" id="depositAmount" placeholder="Amount of FEED" min="0" step="any">
+            <label>Deposit DAMN for WDAMN</label>
+            <input type="number" id="depositAmount" placeholder="Amount of DAMN" min="0" step="any">
             <div class="percentage-buttons">
                 <button class="percentage-button" onclick="setDepositPercentage(0.25)">25%</button>
                 <button class="percentage-button" onclick="setDepositPercentage(0.5)">50%</button>
@@ -215,8 +215,8 @@
             <button class="action-button" id="depositButton">Deposit</button>
         </div>
         <div class="input-box">
-            <label>Withdraw WFEED for FEED</label>
-            <input type="number" id="withdrawAmount" placeholder="Amount of WFEED" min="0" step="any">
+            <label>Withdraw WDAMN for DAMN</label>
+            <input type="number" id="withdrawAmount" placeholder="Amount of WDAMN" min="0" step="any">
             <div class="percentage-buttons">
                 <button class="percentage-button" onclick="setWithdrawPercentage(0.25)">25%</button>
                 <button class="percentage-button" onclick="setWithdrawPercentage(0.5)">50%</button>
@@ -235,7 +235,7 @@
             <label>Add Liquidity</label>
             <input type="text" id="memeCoinAddress" placeholder="Meme Coin Address">
             <div class="token-info">
-                <p>Deployment Tips: 1,000,000,000,000 WFEED, 1,000,000,000,000,000 MEME COIN</p>
+                <p>Deployment Tips: 1,000,000,000,000 WDAMN, 1,000,000,000,000,000 MEME COIN</p>
             </div>
             <button class="action-button" id="addLiquidityButton" disabled>Add Liquidity</button>
         </div>
@@ -247,29 +247,29 @@
         </div>
         <div class="dog-section">
             <img src="https://www.woofswap.finance/image/tokens/shiba.gif" alt="Shiba Dog">
-            <div class="dog-message" id="dogMessage">"FEED! Connect your wallet to manage tokens, pup!"</div>
+            <div class="dog-message" id="dogMessage">"DAMN! Connect your wallet to manage tokens, pup!"</div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.7.0/dist/web3.min.js"></script>
     <script>
-        const FeedswapAddress = '0x1bf7A95Eb58d57269D27E30D8e8e564A24E0AeFC';
-        const FEEDAddress = '0xe9Cb2D7ADC24Fc59FE00D6C0A0669BDF16805Fe0';
-        const WFEEDAddress = '0x3DeB916d933DEfeb2663b60E8cA7F5f3ADE51087';
-        const FeedswapAbi = [
+        const DAMNswapAddress = '0x1309252faea26994728Dd10a2217b7ab7958Db73';
+        const DAMNAddress = '0xeCe898EdCc0AF91430603175F945D8de75291c70';
+        const WDAMNAddress = '0x6A31Aa44Ea31220f6Cf8712B7820E16924800C6e';
+        const DAMNswapAbi = [
             {"inputs":[],"stateMutability":"nonpayable","type":"constructor"},
             {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"address","name":"memeCoin","type":"address"},{"indexed":false,"internalType":"string","name":"name","type":"string"},{"indexed":false,"internalType":"string","name":"symbol","type":"string"}],"name":"MemeCoinDeployed","type":"event"},
             {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"address","name":"pair","type":"address"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"LiquidityAdded","type":"event"},
             {"inputs":[{"internalType":"address","name":"memeCoinAddress","type":"address"}],"name":"addLiquidity","outputs":[],"stateMutability":"nonpayable","type":"function"},
             {"inputs":[{"internalType":"string","name":"_name","type":"string"},{"internalType":"string","name":"_symbol","type":"string"}],"name":"deployMemeCoin","outputs":[],"stateMutability":"nonpayable","type":"function"},
-            {"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"depositWFEED","outputs":[],"stateMutability":"nonpayable","type":"function"},
-            {"inputs":[{"internalType":"address","name":"user","type":"address"}],"name":"getRecentMemeCoins","outputs":[{"components":[{"internalType":"address","name":"memeCoin","type":"address"},{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"},{"internalType":"uint256","name":"deployTime","type":"uint256"},{"internalType":"address","name":"pair","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"}],"internalType":"struct Feedswap.MemeCoinInfo[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},
+            {"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"depositWDAMN","outputs":[],"stateMutability":"nonpayable","type":"function"},
+            {"inputs":[{"internalType":"address","name":"user","type":"address"}],"name":"getRecentMemeCoins","outputs":[{"components":[{"internalType":"address","name":"memeCoin","type":"address"},{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"},{"internalType":"uint256","name":"deployTime","type":"uint256"},{"internalType":"address","name":"pair","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"}],"internalType":"struct DAMNswap.MemeCoinInfo[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},
             {"inputs":[{"internalType":"address","name":"memeCoinAddress","type":"address"}],"name":"hasLiquidityAdded","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},
             {"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"isMemeCoin","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},
             {"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"userMemeCoins","outputs":[{"internalType":"address","name":"memeCoin","type":"address"},{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"},{"internalType":"uint256","name":"deployTime","type":"uint256"},{"internalType":"address","name":"pair","type":"address"},{"internalType":"uint256","name":"liquidity","type":"uint256"}],"stateMutability":"view","type":"function"},
-            {"inputs":[],"name":"WFEED","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"}
+            {"inputs":[],"name":"WDAMN","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"}
         ];
-        const wrappedFEEDAbi = [
-            {"inputs":[{"internalType":"address","name":"_FEEDToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},
+        const wrappedDAMNAbi = [
+            {"inputs":[{"internalType":"address","name":"_DAMNToken","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},
             {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"src","type":"address"},{"indexed":true,"internalType":"address","name":"guy","type":"address"},{"indexed":false,"internalType":"uint256","name":"wad","type":"uint256"}],"name":"Approval","type":"event"},
             {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"dst","type":"address"},{"indexed":false,"internalType":"uint256","name":"wad","type":"uint256"}],"name":"Deposit","type":"event"},
             {"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"src","type":"address"},{"indexed":true,"internalType":"address","name":"dst","type":"address"},{"indexed":false,"internalType":"uint256","name":"wad","type":"uint256"}],"name":"Transfer","type":"event"},
@@ -288,7 +288,7 @@
             {"inputs":[{"internalType":"address","name":"dst","type":"address"},{"internalType":"uint256","name":"wad","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},
             {"inputs":[{"internalType":"address","name":"src","type":"address"},{"internalType":"address","name":"dst","type":"address"},{"internalType":"uint256","name":"wad","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},
             {"inputs":[{"internalType":"uint256","name":"wad","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},
-            {"inputs":[],"name":"FEEDToken","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"}
+            {"inputs":[],"name":"DAMNToken","outputs":[{"internalType":"contract IERC20","name":"","type":"address"}],"stateMutability":"view","type":"function"}
         ];
         const erc20Abi = [
             {"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"type":"function"},
@@ -305,29 +305,29 @@
             }
         };
 
-        let web3, account, FeedswapContract, FEEDContract, WFEEDContract;
-        let hasApprovedFEED = false;
+        let web3, account, DAMNswapContract, DAMNContract, WDAMNContract;
+        let hasApprovedDAMN = false;
 
         const dogMessages = {
-            connectSuccess: ["FEED! Wallet connected, ready to manage tokens, pup!", "Arf! You're in, let's roll!", "Bark! Wallet's ready, time to play!"],
-            connectFail: ["FEED! Couldn't connect wallet, try again, pup!", "Arf! Wallet connection failed, give it another go!", "Bark! Something went wrong, check your wallet!"],
-            depositStart: ["FEED! Depositing FEED, hold tight, pup!", "Arf! Wrapping your tokens now!", "Bark! Deposit in progress!"],
-            depositSuccess: ["FEED! FEED deposited, WFEED received, pup!", "Arf! Tokens wrapped successfully!", "Bark! Success! WFEED in your wallet!"],
-            depositFail: ["FEED! Deposit failed, check balance, pup!", "Arf! Something went wrong, try again!", "Bark! Deposit hit a snag, retry!"],
-            withdrawStart: ["FEED! Withdrawing WFEED, hold tight, pup!", "Arf! Unwrapping your tokens now!", "Bark! Withdrawal in progress!"],
-            withdrawSuccess: ["FEED! WFEED withdrawn, FEED received, pup!", "Arf! Tokens unwrapped successfully!", "Bark! Success! FEED in your wallet!"],
-            withdrawFail: ["FEED! Withdrawal failed, check balance, pup!", "Arf! Something went wrong, try again!", "Bark! Withdrawal hit a snag, retry!"],
-            deployStart: ["FEED! Deploying your meme coin, hold tight, pup!", "Arf! Creating your token now!", "Bark! Deployment in progress!"],
-            deploySuccess: ["FEED! Meme coin deployed, you're rolling, pup!", "Arf! Your token is live!", "Bark! Success! Meme coin created!"],
-            deployFail: ["FEED! Deployment failed, check details, pup!", "Arf! Something went wrong, try again!", "Bark! Deployment hit a snag, retry!"],
-            liquidityStart: ["FEED! Adding liquidity, hold tight, pup!", "Arf! Setting up the pool now!", "Bark! Liquidity in progress!"],
-            liquiditySuccess: ["FEED! Liquidity added, trading enabled, pup!", "Arf! Pool is live!", "Bark! Success! Liquidity added!"],
-            liquidityFail: ["FEED! Liquidity addition failed, check tokens, pup!", "Arf! Something went wrong, try again!", "Bark! Liquidity hit a snag, retry!"],
-            invalidInput: ["FEED! Invalid input, check details, pup!", "Arf! Something's not right, check your inputs!", "Bark! Need valid details to proceed!"],
-            userDenied: ["FEED! You canceled the transaction, pup!", "Arf! Transaction denied, try again when ready!", "Bark! You said no, let's try that again!"],
-            copySuccess: ["FEED! Address copied to clipboard, pup!", "Arf! Copied, you're good to go!", "Bark! Address copied successfully!"],
-            copyFail: ["FEED! Failed to copy address, try again, pup!", "Arf! Copy failed, give it another go!", "Bark! Couldn't copy, check your browser!"],
-            liquidityExists: ["FEED! Liquidity already added for this coin, pup!", "Arf! Pool exists, pick another coin!", "Bark! This coin already has liquidity!"]
+            connectSuccess: ["DAMN! Wallet connected, ready to manage tokens, pup!", "Arf! You're in, let's roll!", "Bark! Wallet's ready, time to play!"],
+            connectFail: ["DAMN! Couldn't connect wallet, try again, pup!", "Arf! Wallet connection failed, give it another go!", "Bark! Something went wrong, check your wallet!"],
+            depositStart: ["DAMN! Depositing DAMN, hold tight, pup!", "Arf! Wrapping your tokens now!", "Bark! Deposit in progress!"],
+            depositSuccess: ["DAMN! DAMN deposited, WDAMN received, pup!", "Arf! Tokens wrapped successfully!", "Bark! Success! WDAMN in your wallet!"],
+            depositFail: ["DAMN! Deposit failed, check balance, pup!", "Arf! Something went wrong, try again!", "Bark! Deposit hit a snag, retry!"],
+            withdrawStart: ["DAMN! Withdrawing WDAMN, hold tight, pup!", "Arf! Unwrapping your tokens now!", "Bark! Withdrawal in progress!"],
+            withdrawSuccess: ["DAMN! WDAMN withdrawn, DAMN received, pup!", "Arf! Tokens unwrapped successfully!", "Bark! Success! DAMN in your wallet!"],
+            withdrawFail: ["DAMN! Withdrawal failed, check balance, pup!", "Arf! Something went wrong, try again!", "Bark! Withdrawal hit a snag, retry!"],
+            deployStart: ["DAMN! Deploying your meme coin, hold tight, pup!", "Arf! Creating your token now!", "Bark! Deployment in progress!"],
+            deploySuccess: ["DAMN! Meme coin deployed, you're rolling, pup!", "Arf! Your token is live!", "Bark! Success! Meme coin created!"],
+            deployFail: ["DAMN! Deployment failed, check details, pup!", "Arf! Something went wrong, try again!", "Bark! Deployment hit a snag, retry!"],
+            liquidityStart: ["DAMN! Adding liquidity, hold tight, pup!", "Arf! Setting up the pool now!", "Bark! Liquidity in progress!"],
+            liquiditySuccess: ["DAMN! Liquidity added, trading enabled, pup!", "Arf! Pool is live!", "Bark! Success! Liquidity added!"],
+            liquidityFail: ["DAMN! Liquidity addition failed, check tokens, pup!", "Arf! Something went wrong, try again!", "Bark! Liquidity hit a snag, retry!"],
+            invalidInput: ["DAMN! Invalid input, check details, pup!", "Arf! Something's not right, check your inputs!", "Bark! Need valid details to proceed!"],
+            userDenied: ["DAMN! You canceled the transaction, pup!", "Arf! Transaction denied, try again when ready!", "Bark! You said no, let's try that again!"],
+            copySuccess: ["DAMN! Address copied to clipboard, pup!", "Arf! Copied, you're good to go!", "Bark! Address copied successfully!"],
+            copyFail: ["DAMN! Failed to copy address, try again, pup!", "Arf! Copy failed, give it another go!", "Bark! Couldn't copy, check your browser!"],
+            liquidityExists: ["DAMN! Liquidity already added for this coin, pup!", "Arf! Pool exists, pick another coin!", "Bark! This coin already has liquidity!"]
         };
 
         function getRandomMessage(type) {
@@ -363,7 +363,7 @@
                 }
             } else {
                 document.getElementById('networkStatus').innerText = 'Please install MetaMask';
-                document.getElementById('dogMessage').innerText = 'FEED! MetaMask not found, pup!';
+                document.getElementById('dogMessage').innerText = 'DAMN! MetaMask not found, pup!';
             }
         }
 
@@ -393,28 +393,28 @@
         }
 
         async function initializeContracts() {
-            FeedswapContract = new web3.eth.Contract(FeedswapAbi, FeedswapAddress);
-            FEEDContract = new web3.eth.Contract(erc20Abi, FEEDAddress);
-            WFEEDContract = new web3.eth.Contract(wrappedFEEDAbi, WFEEDAddress);
+            DAMNswapContract = new web3.eth.Contract(DAMNswapAbi, DAMNswapAddress);
+            DAMNContract = new web3.eth.Contract(erc20Abi, DAMNAddress);
+            WDAMNContract = new web3.eth.Contract(wrappedDAMNAbi, WDAMNAddress);
         }
 
         async function updateBalances() {
             if (!web3 || !account) return;
             try {
-                const FEEDBalance = await FEEDContract.methods.balanceOf(account).call();
-                const WFEEDBalance = await WFEEDContract.methods.balanceOf(account).call();
-                document.getElementById('FEEDBalance').innerText = `Balance: ${Number(web3.utils.fromWei(FEEDBalance, 'ether')).toLocaleString()}`;
-                document.getElementById('WFEEDBalance').innerText = `Balance: ${Number(web3.utils.fromWei(WFEEDBalance, 'ether')).toLocaleString()}`;
+                const DAMNBalance = await DAMNContract.methods.balanceOf(account).call();
+                const WDAMNBalance = await WDAMNContract.methods.balanceOf(account).call();
+                document.getElementById('DAMNBalance').innerText = `Balance: ${Number(web3.utils.fromWei(DAMNBalance, 'ether')).toLocaleString()}`;
+                document.getElementById('WDAMNBalance').innerText = `Balance: ${Number(web3.utils.fromWei(WDAMNBalance, 'ether')).toLocaleString()}`;
             } catch (error) {
-                document.getElementById('FEEDBalance').innerText = 'Balance: Error';
-                document.getElementById('WFEEDBalance').innerText = 'Balance: Error';
+                document.getElementById('DAMNBalance').innerText = 'Balance: Error';
+                document.getElementById('WDAMNBalance').innerText = 'Balance: Error';
             }
         }
 
         async function updateRecentMemeCoins() {
             if (!web3 || !account) return;
             try {
-                const memeCoins = await FeedswapContract.methods.getRecentMemeCoins(account).call();
+                const memeCoins = await DAMNswapContract.methods.getRecentMemeCoins(account).call();
                 const container = document.getElementById('recentMemeCoins');
                 container.innerHTML = '';
                 if (memeCoins.length === 0) {
@@ -451,7 +451,7 @@
         async function setDepositPercentage(percentage) {
             if (!web3 || !account) return;
             try {
-                const balance = await FEEDContract.methods.balanceOf(account).call();
+                const balance = await DAMNContract.methods.balanceOf(account).call();
                 const balanceEther = Number(web3.utils.fromWei(balance, 'ether'));
                 let amount;
                 if (percentage === 1) {
@@ -469,7 +469,7 @@
         async function setWithdrawPercentage(percentage) {
             if (!web3 || !account) return;
             try {
-                const balance = await WFEEDContract.methods.balanceOf(account).call();
+                const balance = await WDAMNContract.methods.balanceOf(account).call();
                 const balanceEther = Number(web3.utils.fromWei(balance, 'ether'));
                 let amount;
                 if (percentage === 1) {
@@ -484,7 +484,7 @@
             }
         }
 
-        async function depositFEED() {
+        async function depositDAMN() {
             const status = document.getElementById('networkStatus');
             const depositButton = document.getElementById('depositButton');
             const dogMessage = document.getElementById('dogMessage');
@@ -505,29 +505,29 @@
             try {
                 depositButton.disabled = true;
                 depositButton.innerHTML = 'Depositing... <span class="spinner"></span>';
-                status.innerText = "Depositing FEED...";
+                status.innerText = "Depositing DAMN...";
                 dogMessage.innerText = getRandomMessage('depositStart');
 
                 const amountWei = web3.utils.toWei(amount, 'ether');
-                const FEEDBalance = await FEEDContract.methods.balanceOf(account).call();
-                if (web3.utils.toBN(FEEDBalance).lt(web3.utils.toBN(amountWei))) {
-                    status.innerText = "Insufficient FEED balance.";
-                    dogMessage.innerText = "FEED! Not enough FEED, pup!";
+                const DAMNBalance = await DAMNContract.methods.balanceOf(account).call();
+                if (web3.utils.toBN(DAMNBalance).lt(web3.utils.toBN(amountWei))) {
+                    status.innerText = "Insufficient DAMN balance.";
+                    dogMessage.innerText = "DAMN! Not enough DAMN, pup!";
                     return;
                 }
 
-                if (!hasApprovedFEED) {
-                    status.innerText = "Approving FEED...";
+                if (!hasApprovedDAMN) {
+                    status.innerText = "Approving DAMN...";
                     const maxUint256 = '115792089237316195423570985008687907853269984665640564039457584007913129639935';
-                    const txApprove = await FEEDContract.methods.approve(WFEEDAddress, maxUint256).send({
+                    const txApprove = await DAMNContract.methods.approve(WDAMNAddress, maxUint256).send({
                         from: account,
                         gas: web3.utils.toHex(100000)
                     });
                     await waitForTransaction(txApprove.transactionHash);
-                    hasApprovedFEED = true;
+                    hasApprovedDAMN = true;
                 }
 
-                const tx = await WFEEDContract.methods.deposit(amountWei).send({
+                const tx = await WDAMNContract.methods.deposit(amountWei).send({
                     from: account,
                     gas: web3.utils.toHex(200000)
                 });
@@ -550,7 +550,7 @@
             }
         }
 
-        async function withdraWFEED() {
+        async function withdraWDAMN() {
             const status = document.getElementById('networkStatus');
             const withdrawButton = document.getElementById('withdrawButton');
             const dogMessage = document.getElementById('dogMessage');
@@ -571,18 +571,18 @@
             try {
                 withdrawButton.disabled = true;
                 withdrawButton.innerHTML = 'Withdrawing... <span class="spinner"></span>';
-                status.innerText = "Withdrawing WFEED...";
+                status.innerText = "Withdrawing WDAMN...";
                 dogMessage.innerText = getRandomMessage('withdrawStart');
 
                 const amountWei = web3.utils.toWei(amount, 'ether');
-                const WFEEDBalance = await WFEEDContract.methods.balanceOf(account).call();
-                if (web3.utils.toBN(WFEEDBalance).lt(web3.utils.toBN(amountWei))) {
-                    status.innerText = "Insufficient WFEED balance.";
-                    dogMessage.innerText = "FEED! Not enough WFEED, pup!";
+                const WDAMNBalance = await WDAMNContract.methods.balanceOf(account).call();
+                if (web3.utils.toBN(WDAMNBalance).lt(web3.utils.toBN(amountWei))) {
+                    status.innerText = "Insufficient WDAMN balance.";
+                    dogMessage.innerText = "DAMN! Not enough WDAMN, pup!";
                     return;
                 }
 
-                const tx = await WFEEDContract.methods.withdraw(amountWei).send({
+                const tx = await WDAMNContract.methods.withdraw(amountWei).send({
                     from: account,
                     gas: web3.utils.toHex(200000)
                 });
@@ -630,7 +630,7 @@
                 status.innerText = "Deploying meme coin...";
                 dogMessage.innerText = getRandomMessage('deployStart');
 
-                const tx = await FeedswapContract.methods.deployMemeCoin(name, symbol).send({
+                const tx = await DAMNswapContract.methods.deployMemeCoin(name, symbol).send({
                     from: account,
                     gas: web3.utils.toHex(3000000)
                 });
@@ -674,7 +674,7 @@
             }
 
             try {
-                const hasLiquidity = await FeedswapContract.methods.hasLiquidityAdded(memeCoinAddress).call();
+                const hasLiquidity = await DAMNswapContract.methods.hasLiquidityAdded(memeCoinAddress).call();
                 if (hasLiquidity) {
                     liquidityButton.disabled = true;
                     status.innerText = "Liquidity already added for this coin.";
@@ -682,13 +682,13 @@
                 } else {
                     liquidityButton.disabled = false;
                     status.innerText = "Ready to add liquidity.";
-                    dogMessage.innerText = "FEED! Ready to add liquidity, pup!";
+                    dogMessage.innerText = "DAMN! Ready to add liquidity, pup!";
                 }
             } catch (error) {
                 console.error("Error checking liquidity status:", error);
                 liquidityButton.disabled = false;
                 status.innerText = "Error checking liquidity status, but you can try adding.";
-                dogMessage.innerText = "FEED! Let's try adding liquidity anyway, pup!";
+                dogMessage.innerText = "DAMN! Let's try adding liquidity anyway, pup!";
             }
         }
 
@@ -716,7 +716,7 @@
                 status.innerText = "Adding liquidity...";
                 dogMessage.innerText = getRandomMessage('liquidityStart');
 
-                const tx = await FeedswapContract.methods.addLiquidity(memeCoinAddress).send({
+                const tx = await DAMNswapContract.methods.addLiquidity(memeCoinAddress).send({
                     from: account,
                     gas: web3.utils.toHex(5000000)
                 });
@@ -742,8 +742,8 @@
         }
 
         document.getElementById('connectWalletButton').addEventListener('click', initializeWeb3);
-        document.getElementById('depositButton').addEventListener('click', depositFEED);
-        document.getElementById('withdrawButton').addEventListener('click', withdraWFEED);
+        document.getElementById('depositButton').addEventListener('click', depositDAMN);
+        document.getElementById('withdrawButton').addEventListener('click', withdraWDAMN);
         document.getElementById('deployMemeCoinButton').addEventListener('click', deployMemeCoin);
         document.getElementById('addLiquidityButton').addEventListener('click', addLiquidity);
         document.getElementById('memeCoinAddress').addEventListener('input', checkLiquidityStatus);
